@@ -1,6 +1,6 @@
-# Northstar Encryptor
+# Northstar™ Encryptor
 
-Northstar Encrypt(or) is a Windows desktop application for protecting files and folders in password-encrypted `.crypt` archives. Archive creation and restoration happen locally on your device.
+Northstar™ Encrypt(or) is a Windows desktop application for protecting files and folders in password-encrypted `.crypt` archives. Archive creation and restoration happen locally on your device.
 
 ## Features
 
