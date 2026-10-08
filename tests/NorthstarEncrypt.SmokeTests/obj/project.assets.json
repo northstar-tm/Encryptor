@@ -1,0 +1,97 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "NorthstarEncrypt/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/NorthstarEncrypt.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NorthstarEncrypt.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "NorthstarEncrypt/1.0.0": {
+      "type": "project",
+      "path": "../../NorthstarEncrypt.csproj",
+      "msbuildProject": "../../NorthstarEncrypt.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "NorthstarEncrypt >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\rasperrypy\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\rasperrypy\\Documents\\NorthstarEncrypt\\tests\\NorthstarEncrypt.SmokeTests\\NorthstarEncrypt.SmokeTests.csproj",
+      "projectName": "NorthstarEncrypt.SmokeTests",
+      "projectPath": "C:\\Users\\rasperrypy\\Documents\\NorthstarEncrypt\\tests\\NorthstarEncrypt.SmokeTests\\NorthstarEncrypt.SmokeTests.csproj",
+      "packagesPath": "C:\\Users\\rasperrypy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rasperrypy\\Documents\\NorthstarEncrypt\\tests\\NorthstarEncrypt.SmokeTests\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\rasperrypy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\Users\\rasperrypy\\Documents\\NorthstarEncrypt\\NorthstarEncrypt.csproj": {
+              "projectPath": "C:\\Users\\rasperrypy\\Documents\\NorthstarEncrypt\\NorthstarEncrypt.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.425/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,227 @@
+﻿<Window x:Class="NorthstarEncrypt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Northstar Encrypt" Height="780" Width="1120"
+        MinHeight="700" MinWidth="920"
+        WindowStartupLocation="CenterScreen"
+        Background="#101719" Foreground="#E9F0EE"
+        FontFamily="Segoe UI" UseLayoutRounding="True">
+    <Window.Resources>
+        <SolidColorBrush x:Key="PanelBrush" Color="#182124" />
+        <SolidColorBrush x:Key="PanelRaisedBrush" Color="#202B2E" />
+        <SolidColorBrush x:Key="MutedBrush" Color="#91A19F" />
+        <SolidColorBrush x:Key="MintBrush" Color="#65D9B2" />
+        <Style TargetType="TextBlock">
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        </Style>
+        <Style x:Key="FieldBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#101719" />
+            <Setter Property="Foreground" Value="#E9F0EE" />
+            <Setter Property="BorderBrush" Value="#344246" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="12,10" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="CaretBrush" Value="#65D9B2" />
+        </Style>
+        <Style x:Key="QuietButton" TargetType="Button">
+            <Setter Property="Foreground" Value="#DCE6E3" />
+            <Setter Property="Background" Value="#263235" />
+            <Setter Property="BorderBrush" Value="#3A494D" />
+            <Setter Property="Padding" Value="14,10" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style x:Key="ModeButton" TargetType="RadioButton">
+            <Setter Property="Foreground" Value="#91A19F" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="18,11" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="Chrome" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Chrome" Property="Background" Value="#263735" />
+                                <Setter TargetName="Chrome" Property="BorderBrush" Value="#4F9E84" />
+                                <Setter Property="Foreground" Value="#8BE8C7" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#E9F0EE" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="18" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Border Width="42" Height="42" CornerRadius="9" Background="#65D9B2" Margin="0,0,13,0">
+                    <TextBlock Text="N" Foreground="#10201B" FontSize="24" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="NORTHSTAR" FontSize="17" FontWeight="SemiBold" />
+                    <TextBlock Text="PRIVATE FILE VAULT" FontSize="10" Foreground="{StaticResource MutedBrush}" Margin="0,3,0,0" />
+                </StackPanel>
+            </StackPanel>
+            <Border Grid.Column="1" Background="#1B2927" BorderBrush="#30453E" BorderThickness="1"
+                    CornerRadius="20" Padding="12,7" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Width="7" Height="7" Fill="#65D9B2" Margin="0,0,8,0" VerticalAlignment="Center" />
+                    <TextBlock Text="ON THIS DEVICE" FontSize="10" Foreground="#A7C6BA" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="22" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Background="{StaticResource PanelBrush}" CornerRadius="8" Padding="23">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="16" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="16" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="PROTECTION" FontSize="10" Foreground="{StaticResource MutedBrush}" />
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Text="256-bit" FontSize="28" FontWeight="SemiBold" />
+                        <TextBlock Text="AES-GCM encryption" Foreground="{StaticResource MutedBrush}" FontSize="13" Margin="0,3,0,0" />
+                    </StackPanel>
+                    <Border Grid.Row="4" Height="1" Background="#2B383B" />
+                    <StackPanel Grid.Row="6">
+                        <TextBlock Text="YOUR KEY, YOURS ALONE" FontSize="10" Foreground="#72D8B2" />
+                        <TextBlock Text="A passphrase protects every file. Northstar never receives or stores it." TextWrapping="Wrap" Foreground="#A7B4B2" FontSize="13" LineHeight="20" Margin="0,10,0,0" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="8">
+                        <Border Height="1" Background="#2B383B" Margin="0,0,0,16" />
+                        <TextBlock Text="NO RECOVERY KEY" FontSize="10" Foreground="#F0917C" />
+                        <TextBlock Text="If you lose the passphrase, the encrypted contents cannot be recovered." TextWrapping="Wrap" Foreground="{StaticResource MutedBrush}" FontSize="12" LineHeight="18" Margin="0,8,0,0" />
+                        <TextBlock Text="Source name and approximate size remain visible in the archive header." TextWrapping="Wrap" Foreground="#81918E" FontSize="11" LineHeight="17" Margin="0,12,0,0" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="2" Background="{StaticResource PanelBrush}" CornerRadius="8" Padding="28">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="14" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0">
+                        <TextBlock x:Name="TitleText" Text="Encrypt your files" FontSize="25" FontWeight="SemiBold" />
+                        <TextBlock x:Name="SubtitleText" Text="Seal a file or an entire folder into one private archive." FontSize="13" Foreground="{StaticResource MutedBrush}" Margin="0,6,0,0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <RadioButton x:Name="EncryptMode" Content="Encrypt" GroupName="Mode" IsChecked="True" Style="{StaticResource ModeButton}" Checked="Mode_Checked" />
+                        <RadioButton x:Name="DecryptMode" Content="Decrypt" GroupName="Mode" Style="{StaticResource ModeButton}" Checked="Mode_Checked" Margin="8,0,0,0" />
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Margin="0,18,8,12">
+                            <StackPanel>
+                                <TextBlock x:Name="InputLabel" Text="SOURCE FILE OR FOLDER" FontSize="10" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,8" />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="InputPathBox" Style="{StaticResource FieldBox}" IsReadOnly="True" VerticalContentAlignment="Center" />
+                                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                    <Button x:Name="ChooseFileButton" Content="Choose file" Style="{StaticResource QuietButton}" Click="ChooseFile_Click" />
+                                    <Button x:Name="ChooseFolderButton" Content="Folder" Style="{StaticResource QuietButton}" Click="ChooseFolder_Click" Margin="7,0,0,0" />
+                                </StackPanel>
+                                </Grid>
+                                <TextBlock x:Name="InputHint" Text="Original file or folder stays unchanged." FontSize="11" Foreground="{StaticResource MutedBrush}" Margin="0,7,0,0" />
+                            </StackPanel>
+
+                            <StackPanel Margin="0,18,0,0">
+                                <TextBlock Text="OUTPUT LOCATION" FontSize="10" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,8" />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="OutputPathBox" Style="{StaticResource FieldBox}" VerticalContentAlignment="Center" />
+                                    <Button x:Name="OutputBrowseButton" Grid.Column="2" Content="Save as..." Style="{StaticResource QuietButton}" Click="ChooseOutput_Click" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,18,0,0">
+                                <TextBlock Text="PASSPHRASE" FontSize="10" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,8" />
+                                <PasswordBox x:Name="PasswordBox" Background="#101719" Foreground="#E9F0EE" BorderBrush="#344246" BorderThickness="1" Padding="12,10" FontSize="14" />
+                                <TextBlock Text="Use at least 12 characters. This passphrase cannot be recovered." FontSize="11" Foreground="{StaticResource MutedBrush}" Margin="0,6,0,0" />
+                            </StackPanel>
+
+                            <StackPanel x:Name="ConfirmPanel" Margin="0,18,0,0">
+                                <TextBlock Text="CONFIRM PASSPHRASE" FontSize="10" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,8" />
+                                <PasswordBox x:Name="ConfirmPasswordBox" Background="#101719" Foreground="#E9F0EE" BorderBrush="#344246" BorderThickness="1" Padding="12,10" FontSize="14" />
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel Grid.Row="4" Margin="0,12,0,0">
+                        <ProgressBar x:Name="WorkProgress" Height="3" Minimum="0" Maximum="100" Value="0" Foreground="#65D9B2" Background="#2D3A3D" BorderThickness="0" Visibility="Collapsed" />
+                        <TextBlock x:Name="StatusText" Text="Ready. Choose what you want to protect." Foreground="{StaticResource MutedBrush}" FontSize="12" TextWrapping="Wrap" Margin="0,10,0,14" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="AES-256-GCM  ·  PBKDF2-SHA256" FontSize="10" Foreground="#81918E" VerticalAlignment="Center" />
+                            <Button x:Name="ActionButton" Grid.Column="1" Content="Encrypt file" MinWidth="150" Padding="18,12"
+                                    Background="#65D9B2" Foreground="#10201B" BorderThickness="0" FontSize="14" FontWeight="SemiBold"
+                                    Cursor="Hand" Click="Action_Click" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <TextBlock Text="NORTHSTAR ENCRYPT" FontSize="10" Foreground="#637270" VerticalAlignment="Center" />
+            <TextBlock Text="Your files never leave this device." FontSize="11" Foreground="#81918E" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Window>
